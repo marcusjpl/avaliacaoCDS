@@ -10,8 +10,6 @@
 	<!-- Scan for property file -->
 	<context:property-placeholder location="classpath:META-INF/spring/*.properties" />
 
-	
-	
 	<!-- Transaction Manager -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
@@ -19,7 +17,6 @@
 	</bean>
 	<!-- Detect @Transactional -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
-	
 	
 	<!-- Entity Manager Factory -->
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -42,9 +39,5 @@
     	<property name="password" value="${h2.password}" />
 	</bean>
 
-
-	<bean
-		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
-	
-
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 </beans>

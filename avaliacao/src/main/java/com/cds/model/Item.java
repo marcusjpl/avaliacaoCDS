@@ -14,8 +14,6 @@ import javax.persistence.NamedQuery;
 }) 
 public class Item {
 
-	
-
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
